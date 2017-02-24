@@ -1,0 +1,56 @@
+input[type="text"],
+input[type="email"],
+textarea {
+  background-color: $white;
+  border: 1px $green solid;
+  border-radius: 3px;
+  font-size: 14px;
+  padding: 0 10px;
+  height: 40px;
+  line-height: 40px;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 6px rgba(0,0,0,.16);
+  }
+}
+
+label {
+  font-weight: bold;
+}
+
+span.wpcf7-not-valid-tip {
+  color: #660000;
+}
+
+.wpcf7 {
+  margin: 25px auto;
+  max-width: 50%;
+  width: 100%;
+
+  .wpcf7-response-output {
+    margin: 15px 0;
+    padding: 0;
+
+    &.wpcf7-validation-errors {
+      border: none;
+      font-style: italic;
+    }
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 768px) {
+    max-width: 100%;
+  }
+}
+
+.newsletter {
+  input[type="text"] {
+    margin-right: 10px;
+  }
+}

@@ -12,6 +12,7 @@ body {
 
 h1, h2, h3, h4, h5 {
   font-family: $title-font;
+  font-weight: normal;
 }
 
 h1 {
@@ -30,6 +31,10 @@ h1 {
 h2 {
   font-size: 2em;
   margin-top: 0;
+}
+
+h3 {
+  font-size: 1.5em;
 }
 
 a {
@@ -54,9 +59,10 @@ section.lead {
   align-items: center;
   flex-direction: column;
   margin-top: 60px;
-  filter: saturate(.5) contrast(.8) brightness(.9);
+  filter: saturate(.5) contrast(.9) brightness(.9);
+  text-align: center;
   position: relative;
-  text-shadow: 0 0 6px rgba(255,255,255,.75);
+  text-shadow: 0 0 6px rgba(255,255,255,.75), 0 0 1px rgba(255,255,255,.25);
   z-index: 1;
 
   &:before {
