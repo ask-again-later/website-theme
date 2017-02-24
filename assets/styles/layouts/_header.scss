@@ -33,7 +33,8 @@ header.banner {
 
 nav.nav-primary {
   flex-grow: 1;
-  margin-left: 100px;
+  flex-shrink: 1;
+  margin-left: 50px;
   a {
     text-decoration: none;
     color: $white;
