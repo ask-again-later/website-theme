@@ -3,4 +3,13 @@ footer.content-info {
   color: $white;
   text-align: center;
   padding: 10px;
+  font-size: 14px;
+  line-height: 14px;
+
+  a {
+    color: $white;
+    text-shadow: none;
+    display: inline-block;
+    vertical-align: middle;
+  }
 }
