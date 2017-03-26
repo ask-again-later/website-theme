@@ -25,6 +25,14 @@ header.banner {
   .hamburger {
     display: none;
 
+    .hamburger-inner {
+      box-shadow: 1px 1px 2px $silver;
+
+      &:before, &:after {
+        box-shadow: 1px 1px 2px $silver;
+      }
+    }
+
     &:focus {
       outline: none;
     }
@@ -154,15 +162,12 @@ nav.nav-primary {
     height: calc(100% - 60px);
     transform: translate(0, -5px);
     transition: .5s;
-    background-color: $silver;
+    background-color: $black;
     margin: 0;
-
-    a {
-      color: $black;
-    }
 
     ul {
       display: block;
+      border-top: 1px $silver solid;
 
       > li {
         margin: 0;
@@ -171,6 +176,7 @@ nav.nav-primary {
           line-height: 1.2;
           display: block;
           padding: 10px 20px;
+          border-bottom: 1px rgba($black, .2);
 
           &:after {
             bottom: 0;
@@ -194,6 +200,10 @@ nav.nav-primary {
           ul.sub-menu {
             display: block;
             border-top: none;
+
+            li a {
+              padding: 10px 20px;
+            }
           }
         }
       }

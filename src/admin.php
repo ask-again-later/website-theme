@@ -14,6 +14,22 @@ add_action('customize_register', function (\WP_Customize_Manager $wp_customize) 
             bloginfo('name');
         }
     ]);
+
+    $wp_customize->add_setting('api_base_url', [
+      'default' => ''
+    ]);
+
+    $wp_customize->add_section('api_integration', [
+      'title' => __('API Integration', 'sage'),
+      'priority' => 30
+    ]);
+
+    $wp_customize->add_control('api_base_url_ctrl', [
+      'label' => 'API Base URL',
+      'section' => 'api_integration',
+      'settings' => 'api_base_url',
+      'type' => 'text'
+    ]);
 });
 
 /**
