@@ -10,6 +10,8 @@
   $advantages = json_decode($result, true);
 @endphp
 
+@php(the_content())
+
 @foreach($advantages as $advantage)
   <div class="item">
     <h3>{{ $advantage['name'] }} ( {{ join(", ", explode(",", $advantage['allowed_ratings'])) }})</h3>

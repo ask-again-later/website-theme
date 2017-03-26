@@ -10,6 +10,8 @@
   $challenges = json_decode($result, true);
 @endphp
 
+@php(the_content())
+
 @foreach($challenges as $challenge)
   <div class="item">
     <h3>{{ $challenge['name'] }}</h3>

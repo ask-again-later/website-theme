@@ -10,6 +10,8 @@
   $true_selves = json_decode($result, true);
 @endphp
 
+@php(the_content())
+
 @foreach($true_selves as $true_self)
   <div class="item">
     <h3>{{ $true_self['name'] }}</h3>
