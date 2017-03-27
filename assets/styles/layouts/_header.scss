@@ -104,6 +104,7 @@ nav.nav-primary {
         transform: translateY(-5px);
         transition: transform .5s, opacity .5s;
         z-index: 99;
+        pointer-events: none;
 
         li {
           margin: 0;
@@ -136,10 +137,11 @@ nav.nav-primary {
             transform: translate(0);
           }
         }
-        ul {
+        ul.sub-menu {
           transform: translateY(0);
           opacity: 1;
           display: block;
+          pointer-events: all;
         }
       }
     }
