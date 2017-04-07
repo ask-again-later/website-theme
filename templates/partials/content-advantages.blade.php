@@ -15,7 +15,7 @@
 @php(the_content())
 
 @foreach($advantages as $advantage)
-  <div class="item">
+  <div class="item" id="{{ strtolower(str_replace(" ", "-", $advantage['name'])) }}">
     <h3>{{ $advantage['name'] }} ( {{ join(", ", explode(",", $advantage['allowed_ratings'])) }}){{ ($advantage['is_unnatural']) ? ' (Unnatural)' : '' }}</h3>
     @if($advantage['prerequisites'])
       <p><strong>Prerequisites:</strong> {{ $advantage['prerequisites'] }}</p>
