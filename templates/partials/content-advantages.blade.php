@@ -16,7 +16,10 @@
 
 @foreach($advantages as $advantage)
   <div class="item">
-    <h3>{{ $advantage['name'] }} ( {{ join(", ", explode(",", $advantage['allowed_ratings'])) }})</h3>
+    <h3>{{ $advantage['name'] }} ( {{ join(", ", explode(",", $advantage['allowed_ratings'])) }}){{ ($advantage['is_unnatural']) ? ' (Unnatural)' : '' }}</h3>
+    @if($advantage['prerequisites'])
+      <p><strong>Prerequisites:</strong> {{ $advantage['prerequisites'] }}</p>
+    @endif
     <div class="description">
       @php
         echo $Parsedown->text($advantage['description']);
