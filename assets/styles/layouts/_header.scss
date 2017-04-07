@@ -43,9 +43,58 @@ nav.nav-primary {
   flex-grow: 1;
   flex-shrink: 1;
   margin-left: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: middle;
+
   a {
     text-decoration: none;
     color: $white;
+  }
+
+  .search {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 20px;
+
+    .search-form {
+      display: block;
+      position: absolute;
+      top: calc(100% - 2px);
+      right: 0;
+      border-top: 2px $ash-grey solid;
+      background-color: $dirty-polaroid;
+      box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+      opacity: 0;
+      transform: translateY(-5px);
+      transition: transform .5s, opacity .5s;
+      z-index: 99;
+      pointer-events: none;
+      padding: 10px;
+      display: flex;
+
+      label {
+        position: relative;
+        margin-right: 10px;
+
+        span {
+          width: 0;
+          height: 0;
+          display: inline-block;
+          position: absolute;
+          overflow: hidden;
+        }
+      }
+    }
+
+    &:hover {
+      .search-form {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
   }
 
   ul {
@@ -59,7 +108,7 @@ nav.nav-primary {
     > li {
       display: block;
       position: relative;
-      margin: 0 20px;
+      margin: 0 10px;
 
       &:last-child {
         margin-right: 0;
@@ -109,6 +158,7 @@ nav.nav-primary {
         li {
           margin: 0;
           padding: 0;
+          position: relative;
 
           a {
             color: $black !important;
@@ -125,6 +175,27 @@ nav.nav-primary {
 
             &:after {
               display: none;
+            }
+          }
+
+          ul {
+            position: absolute;
+            min-width: 150px;
+            background-color: $dirty-polaroid;
+            display: block;
+            left: 100%;
+            top: 0;
+            opacity: 0;
+            pointer-events: none;
+          }
+
+          &:hover {
+            a {
+              background-color: rgba($silver, .3);
+            }
+            ul {
+              opacity: 1;
+              pointer-events: all;
             }
           }
         }
@@ -148,6 +219,18 @@ nav.nav-primary {
   }
 }
 
+@media only screen and (max-width: 960px) {
+  header.banner {
+    a.brand {
+      font-size: 1.75em;
+    }
+  }
+
+  nav.nav-primary {
+    font-size: 15px;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   header.banner {
     .hamburger {
@@ -166,6 +249,24 @@ nav.nav-primary {
     transition: .5s;
     background-color: $black;
     margin: 0;
+
+    .search {
+      > a {
+        display: none;
+      }
+      .search-form {
+        width: calc(100% + 20px);
+        padding: 10px 20px;
+
+        label {
+          flex-grow: 1;
+
+          input {
+            width: 100%;
+          }
+        }
+      }
+    }
 
     ul {
       display: block;

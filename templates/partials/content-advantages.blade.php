@@ -15,7 +15,7 @@
 @php(the_content())
 
 @foreach($advantages as $advantage)
-  <div class="item">
+  <div class="item" id="{{ strtolower(str_replace(" ", "-", $advantage['name'])) }}">
     <h3>{{ $advantage['name'] }} ( {{ join(", ", explode(",", $advantage['allowed_ratings'])) }})</h3>
     <div class="description">
       @php
