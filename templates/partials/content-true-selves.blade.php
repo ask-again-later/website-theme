@@ -1,4 +1,6 @@
 @php
+  include get_stylesheet_directory(). '/src/lib/Parsedown/Parsedown.php';
+  $Parsedown = new Parsedown();
   $url = get_theme_mod('api_base_url').'api/true_selves';
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -17,7 +19,7 @@
     <h3>{{ $true_self['name'] }}</h3>
     <div class="description">
       @php
-        echo $true_self['description'];
+        echo $Parsedown->text($true_self['description']);
       @endphp
     </div>
   </div>

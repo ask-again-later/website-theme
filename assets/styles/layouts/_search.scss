@@ -1,0 +1,24 @@
+.search {
+  article.search-item {
+    margin-bottom: 25px;
+    border-bottom: 1px $ash-grey solid;
+    padding-bottom: 25px;
+    padding-top: 25px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+
+    h2 {
+      a {
+        text-decoration: none;
+        color: $black;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
